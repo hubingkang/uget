@@ -11,7 +11,7 @@ import { WordRotate } from '@/components/ui/word-rotate'
 import Image from 'next/image'
 import { Bike } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 import {
   Pagination,
@@ -21,8 +21,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination"
-
+} from '@/components/ui/pagination'
 
 const words = [
   {
@@ -49,7 +48,7 @@ const words = [
 
 export default function IndexPage() {
   return (
-    <div className=''>
+    <div className="">
       <BackgroundBeamsWithCollision className="h-auto">
         <div className="w-full">
           <section className="container grid items-center justify-items-center gap-6 pb-8 pt-6 md:py-10">
@@ -111,21 +110,23 @@ export default function IndexPage() {
       </BackgroundBeamsWithCollision>
 
       <div className="container flex p-4 gap-6">
-      <div className="hidden md:flex md:flex-col md:gap-1 w-48 max-h-[calc(100vh-180px)] overflow-y-auto scrollbar-none sticky top-[81px] pr-2">
-        <ScrollArea className=" p-4">
-          {new Array(30).fill(0).map((_, idx) => (
-              <div
-                key={idx}
-                className={cn(
-                  'p-2 rounded-md cursor-pointer hover:bg-primary/5 hover:text-orange-500 flex items-center gap-2',
-                  idx === 0 && 'bg-primary/10 text-orange-500'
-                )}
-              >
-                <Bike className="w-4 h-4" />
-                <span>测试分类{idx}</span>
-              </div>
-            ))}
-        </ScrollArea>
+        <div className="hidden md:flex md:flex-col md:gap-1 w-48 max-h-[calc(100vh-96px)] overflow-y-auto scrollbar-none sticky top-[81px] pr-2">
+          <ScrollArea className="px-4">
+            <div className="space-y-1">
+              {new Array(30).fill(0).map((_, idx) => (
+                <div
+                  key={idx}
+                  className={cn(
+                    'p-2 rounded-md cursor-pointer hover:bg-primary/5 hover:text-primary flex items-center gap-2',
+                    idx === 0 && 'bg-primary/10 text-primary'
+                  )}
+                >
+                  <Bike className="w-4 h-4" />
+                  <span>测试分类{idx}</span>
+                </div>
+              ))}
+            </div>
+          </ScrollArea>
         </div>
         {/* <div className="hidden md:flex md:flex-col md:gap-1 w-48 max-h-[calc(100vh-180px)] overflow-y-auto scrollbar-none sticky top-[65px] pr-2">
           {new Array(30).fill(0).map((_, idx) => (
@@ -152,10 +153,11 @@ export default function IndexPage() {
             //   // gradientColor={theme === 'dark' ? '#262626' : '#D9D9D955'}
             // >
             // <Link href={`/entries/${idx}`} key={idx}>
-              <div
-                className="p-4 border rounded-lg shadow-md hover:shadow-lg group hover:-translate-y-1 transition-all duration-300"
-                key={idx}
-              >
+            <div
+              className="border rounded-lg group hover:-translate-y-1 transition-all duration-300 bg-primary/15 px-1 py-1"
+              key={idx}
+            >
+              <div className="bg-background rounded-md p-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 flex items-center justify-center border border-1 rounded-full relative">
                     <div
@@ -175,37 +177,43 @@ export default function IndexPage() {
                   </div>
 
                   {/* <Avatar>
-                <AvatarImage
-                  src="https://github.com/shadcn.png"
-                  alt="@shadcn"
-                />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar> */}
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="@shadcn"
+                  />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar> */}
 
-                  <div className='flex-1'>
-                    <h2 className="text-lg font-bold">Top Social Tools</h2>
+                  <div className="flex-1">
+                    <Link href={`/entries/${idx}`}>
+                      <h2 className="text-lg font-bold hover:text-primary">
+                        Top Social Tools
+                      </h2>
+                    </Link>
                     <div className="flex space-x-2 text-sm text-gray-500">
                       <Badge variant="outline">Marketing</Badge>
                       <Badge variant="outline">Business</Badge>
                     </div>
                   </div>
                 </div>
-                <p className="mt-3 text-gray-700">
+                <p className="mt-3 text-muted-foreground">
                   Find the Perfect Social Media Tool for Your Marketing Goals
                   Research, Growth...
                 </p>
-                <div className="mt-2 flex items-center justify-between space-x-2 text-sm text-gray-400">
-                  <span className="cursor-pointer"># Free</span>
-                  <div className="flex items-center space-x-1">
-                    <span>📊 DR: 100</span>
-                    <span>AS: 100</span>
-                  </div>
+              </div>
+              <div className="flex items-center justify-between space-x-2 text-sm px-4 py-2">
+                <span className="cursor-pointer hover:text-primary">
+                  # Free
+                </span>
+                <div className="flex items-center space-x-1">
+                  <span>📊 DR: 100</span>
+                  <span>AS: 100</span>
                 </div>
               </div>
+            </div>
             // </Link>
             // </MagicCard>
           ))}
-
 
           <Pagination>
             <PaginationContent>
