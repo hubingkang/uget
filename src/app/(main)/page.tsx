@@ -109,8 +109,8 @@ export default function IndexPage() {
         </div>
       </BackgroundBeamsWithCollision>
 
-      <div className="container flex p-4 gap-6">
-        <div className="hidden md:flex md:flex-col md:gap-1 w-48 max-h-[calc(100vh-96px)] overflow-y-auto scrollbar-none sticky top-[81px] pr-2">
+      <div className="container flex px-10 mt-6 gap-6">
+        {/* <div className="hidden md:flex md:flex-col md:gap-1 w-48 max-h-[calc(100vh-96px)] overflow-y-auto scrollbar-none sticky top-[81px] pr-2">
           <ScrollArea className="px-4">
             <div className="space-y-1">
               {new Array(30).fill(0).map((_, idx) => (
@@ -127,7 +127,7 @@ export default function IndexPage() {
               ))}
             </div>
           </ScrollArea>
-        </div>
+        </div> */}
         {/* <div className="hidden md:flex md:flex-col md:gap-1 w-48 max-h-[calc(100vh-180px)] overflow-y-auto scrollbar-none sticky top-[65px] pr-2">
           {new Array(30).fill(0).map((_, idx) => (
             <div
@@ -144,39 +144,40 @@ export default function IndexPage() {
 
           <div className='bg-primary text-orange-500 absolute top-1/2 w-1 h-4'></div>
         </div> */}
-        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {new Array(30).fill(0).map((_, idx) => (
-            // <MagicCard
-            //   key={idx}
-            //   className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl h-[300px]"
-            //   gradientColor="#D9D9D955"
-            //   // gradientColor={theme === 'dark' ? '#262626' : '#D9D9D955'}
-            // >
-            // <Link href={`/entries/${idx}`} key={idx}>
-            <div
-              className="border rounded-lg group hover:-translate-y-1 transition-all duration-300 bg-primary/15 px-1 py-1"
-              key={idx}
-            >
-              <div className="bg-background rounded-md p-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 flex items-center justify-center border border-1 rounded-full relative">
-                    <div
-                      className="absolute inset-0 z-[-1] transition-all duration-300 group-hover:blur-lg group-hover:backdrop-opacity-70 group-hover:bg-no-repeat group-hover:bg-cover"
-                      style={{
-                        backgroundImage:
-                          'url(https://cdn.macwk.net/images/77241704625853555.png?imageMogr2/format/webp)',
-                      }}
-                    ></div>
-                    <Image
-                      src="/test.jpeg"
-                      alt="logo"
-                      className="rounded-full"
-                      width={48}
-                      height={48}
-                    />
-                  </div>
+        <div className="flex-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {new Array(30).fill(0).map((_, idx) => (
+              // <MagicCard
+              //   key={idx}
+              //   className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl h-[300px]"
+              //   gradientColor="#D9D9D955"
+              //   // gradientColor={theme === 'dark' ? '#262626' : '#D9D9D955'}
+              // >
+              // <Link href={`/entries/${idx}`} key={idx}>
+              <div
+                className="border rounded-2xl group hover:-translate-y-1 transition-all duration-300 bg-primary/15 px-1 py-1"
+                key={idx}
+              >
+                <div className="bg-background rounded-xl p-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 flex items-center justify-center border border-1 rounded-full relative">
+                      <div
+                        className="absolute inset-0 z-[-1] transition-all duration-300 group-hover:blur-lg group-hover:backdrop-opacity-70 group-hover:bg-no-repeat group-hover:bg-cover"
+                        style={{
+                          backgroundImage:
+                            'url(https://cdn.macwk.net/images/77241704625853555.png?imageMogr2/format/webp)',
+                        }}
+                      ></div>
+                      <Image
+                        src="/test.jpeg"
+                        alt="logo"
+                        className="rounded-full"
+                        width={48}
+                        height={48}
+                      />
+                    </div>
 
-                  {/* <Avatar>
+                    {/* <Avatar>
                   <AvatarImage
                     src="https://github.com/shadcn.png"
                     alt="@shadcn"
@@ -184,59 +185,62 @@ export default function IndexPage() {
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar> */}
 
-                  <div className="flex-1">
-                    <Link href={`/entries/${idx}`}>
-                      <h2 className="text-lg font-bold hover:text-primary">
-                        Top Social Tools
-                      </h2>
-                    </Link>
-                    <div className="flex space-x-2 text-sm text-gray-500">
-                      <Badge variant="outline">Marketing</Badge>
-                      <Badge variant="outline">Business</Badge>
+                    <div className="flex-1">
+                      <Link href={`/entries/${idx}`}>
+                        <h2 className="text-lg font-bold hover:text-primary">
+                          Top Social Tools
+                        </h2>
+                      </Link>
+                      <div className="flex space-x-2 text-sm text-gray-500">
+                        <Badge variant="outline">Marketing</Badge>
+                        <Badge variant="outline">Business</Badge>
+                      </div>
                     </div>
                   </div>
+                  <p className="mt-3 text-muted-foreground">
+                    Find the Perfect Social Media Tool for Your Marketing Goals
+                    Research, Growth...
+                  </p>
                 </div>
-                <p className="mt-3 text-muted-foreground">
-                  Find the Perfect Social Media Tool for Your Marketing Goals
-                  Research, Growth...
-                </p>
-              </div>
-              <div className="flex items-center justify-between space-x-2 text-sm px-4 py-2">
-                <span className="cursor-pointer hover:text-primary">
-                  # Free
-                </span>
-                <div className="flex items-center space-x-1">
-                  <span>📊 DR: 100</span>
-                  <span>AS: 100</span>
+                <div className="flex items-center justify-between space-x-2 text-sm px-4 py-2">
+                  <span className="cursor-pointer hover:text-primary">
+                    # Free
+                  </span>
+                  <div className="flex items-center space-x-1">
+                    <span>📊 DR: 100</span>
+                    <span>AS: 100</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            // </Link>
-            // </MagicCard>
-          ))}
+              // </Link>
+              // </MagicCard>
+            ))}
+          </div>
 
-          <Pagination>
-            <PaginationContent>
-              <PaginationItem>
-                <PaginationPrevious href="#" />
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#">1</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#">2</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href="#">3</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationEllipsis />
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationNext href="#" />
-              </PaginationItem>
-            </PaginationContent>
-          </Pagination>
+          <div className="flex items-center mt-8">
+            <Pagination>
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious href="#" />
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink href="#">1</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink href="#">2</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink href="#">3</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationEllipsis />
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationNext href="#" />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          </div>
         </div>
       </div>
     </div>
