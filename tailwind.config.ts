@@ -12,7 +12,7 @@ export default {
     container: {
       center: true,
       padding: {
-        DEFAULT: '1rem',
+        DEFAULT: '2.5rem',
         md: '2rem',
       },
       screens: {
@@ -74,6 +74,7 @@ export default {
     require('tailwindcss-animate'),
     addVariablesForColors,
     require('tailwind-scrollbar'),
+    require('@tailwindcss/typography'),
   ],
 } satisfies Config
 
